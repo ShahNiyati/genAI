@@ -1,0 +1,197 @@
+/* CSS Variables from the provided color palette */
+:root {
+    --background-gradient: linear-gradient(135deg, #e0f2f1, #b2dfdb); /* Light green-teal gradient for background */
+    --header-color: #1976D2; /* Deep blue from the right of the palette */
+    --user-bubble-color: #e862c6; /* Light, soft green/yellow from the left */
+    --ai-bubble-color: #FFFFFF; /* Clean white for AI responses */
+    --text-color: #333333;
+    --header-text-color: #FFFFFF;
+    --input-background: #FFFFFF;
+    --font-family: 'Poppins', sans-serif;
+    --container-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 450px;
+    height: 90vh;
+    max-height: 800px;
+    background: #f1f5f8; /* A very light grey for the chat window background */
+    border-radius: 20px;
+    box-shadow: var(--container-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Chat Header Styling */
+.chat-header {
+    background-color: var(--header-color);
+    color: var(--header-text-color);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.chat-header .profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #42A5F5; /* A lighter blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.chat-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.chat-header p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* Chat Window Styling */
+.chat-window {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-image:  linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+    url('/images/radhakrishna.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* or contain if you prefer */
+    background-position: center;
+    position: relative;
+}
+
+.chat-window::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6); /* white overlay with opacity */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -999;
+}
+
+.chat-window > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Individual Message Bubble Styling */
+.message {
+    display: flex;
+    max-width: 80%;
+}
+
+.message .bubble {
+    padding: 12px 18px;
+    border-radius: 20px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* AI (Krishna Ji's) Message Styling */
+.ai-message {
+    align-self: flex-start;
+}
+.ai-message .bubble {
+    background-color: var(--ai-bubble-color);
+    border-top-left-radius: 5px;
+    color: var(--text-color);
+}
+
+/* User (Your) Message Styling */
+.user-message {
+    align-self: flex-end;
+}
+.user-message .bubble {
+    background-color: var(--user-bubble-color);
+    border-top-right-radius: 5px;
+    color: #f9f9f8; /* Darker text for better contrast on the yellow bubble */
+}
+
+/* Loading Indicator */
+.loading .bubble {
+    font-style: italic;
+    color: #888;
+    background-color: #f0f0f0;
+}
+.profile-pic img {
+    width: 50px; /* adjust size as needed */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white; /* optional border for aesthetic */
+}
+
+/* Chat Footer and Input Form Styling */
+.chat-footer {
+    padding: 15px 20px;
+    background-color: #e8e8e8;
+    flex-shrink: 0;
+}
+
+.chat-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#chat-input {
+    flex-grow: 1;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: var(--font-family);
+    outline: none;
+}
+
+#send-button {
+    border: none;
+    background-color: var(--header-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#send-button:hover {
+    background-color: #1565C0; /* A slightly darker blue on hover */
+}

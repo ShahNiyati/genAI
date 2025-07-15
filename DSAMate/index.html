@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Instructor AI</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Google Fonts for a modern, friendly look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation (Left Column) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">AI</div>
+                <h1>DSAMate</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7v2c4.97 0 9-4.03 9-9s-4.03-9-9-9z"></path></svg>
+                        History
+                    </a>
+                </li>
+                <li class="nav-item">
+                     <a href="#" class="nav-link ">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"></path></svg>
+                        Tutorials
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                         <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"></path></svg>
+                        Playground
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                DSA Mentor AI v2.0 <br>
+                Powered by Niyati Shah
+            </div>
+        </aside>
+
+        <!-- Main Content Area (Right Column) -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>DSA Instructor AI</h2>
+                <div class="header-actions">
+                    <button>🌙 Dark Mode</button>
+                    <button>👤 Profile</button>
+                </div>
+            </header>
+
+            <!-- Stats and Topics Section -->
+            <section class="stats-grid">
+                <div class="card">
+                    <center>
+                    <h1 class="icon">Statistics</h1>
+                    <p class="stat-value">1,248</p>
+                    <p class="stat-label">Questions Solved</p>
+                    </center>
+                </div>
+                <div class="card">
+                    <h3 class="icon">📚 Popular Topics</h3>
+                    <ul class="topics-list">
+                        <li>JavaScript Closures</li>
+                        <li>Python Decorators</li>
+                        <li>React Hooks</li>
+                        <li>Recursion Patterns</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="icon">📈 Progress Tracker</h3>
+                    <p class="progress-text">Topics Covered: <span id="topics-covered">12</span> / <span id="total-topics">20</span></p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <p class="progress-percent" id="progress-percent">60%</p>
+                </div>
+                
+            </section>
+
+            <!-- Chat Section -->
+            <section class="chat-section">
+                <!-- Chat messages will be displayed here -->
+                <div id="chat-container">
+                    <div class="message ai">
+                        Hello! I am your DSA Instructor. Ask me any coding-related question in any programming language.
+                    </div>
+                </div>
+
+                <!-- User input form -->
+                <form id="chat-form">
+                    <input type="text" id="chat-input" placeholder="Ask a coding question..." autocomplete="off" required>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

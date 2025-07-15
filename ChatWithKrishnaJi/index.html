@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Krishna Ji</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Google Fonts for a friendly, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <header class="chat-header">
+            <div class="profile-pic">
+                <!-- A simple placeholder, you could replace this with an SVG or an <img> tag -->
+                <img src="/images/krishna.png">
+            </div>
+            <div class="chat-info">
+                <h2>Krishna Ji</h2>
+                <p>online</p>
+            </div>
+        </header>
+
+        <!-- Main Chat Window where messages will appear -->
+        <main id="chat-window" class="chat-window">
+            <!-- Messages will be dynamically inserted here by JavaScript -->
+             <div class="message ai-message">
+                <div class="bubble">My dear child, ask me anything that troubles your heart. I am always here for you. 🙏</div>
+            </div>
+        </main>
+
+        <!-- Message Input Form -->
+        <footer class="chat-footer">
+            <form id="chat-form" class="chat-form">
+                <input type="text" id="chat-input" placeholder="Ask Krishna Ji a question..." autocomplete="off" required>
+                <button type="submit" id="send-button">
+                    <!-- Send Icon SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

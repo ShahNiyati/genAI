@@ -1,0 +1,352 @@
+/* CSS Variables for the specified Light Theme */
+:root {
+    --primary-color: #008080;   /* Teal */
+    --secondary-color: #FFD580; /* Soft Yellow */
+    --background-color: #FFFFFF; /* White */
+    --text-color: #333333;
+    --container-bg-color: #f5f5f5;
+    --container-border-color: #e0e0e0;
+    --button-text-color: #FFFFFF;
+    --ai-message-bg: #e6f3f3;
+    --user-message-bg: #fffbe6;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Basic Reset and Font setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Main container to hold the two-column layout */
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* --- Sidebar (Left Column) --- */
+.sidebar {
+    width: 260px;
+    background-color: #f8f9fa;
+    border-right: 1px solid var(--container-border-color);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.sidebar-header .logo {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+}
+
+.sidebar-header h1 {
+    font-size: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-menu {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.nav-item {
+    margin-bottom: 16px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+}
+
+.nav-link.active svg, .nav-link:hover svg {
+    fill: var(--button-text-color);
+}
+
+.nav-link svg {
+    width: 20px;
+    height: 20px;
+    fill: #555;
+    transition: fill 0.3s;
+}
+
+.sidebar-footer {
+    font-size: 12px;
+    color: #888;
+    padding-top: 20px;
+    border-top: 1px solid var(--container-border-color);
+}
+
+/* --- Main Content (Right Column) --- */
+.main-content {
+    flex-grow: 1;
+    padding: 24px 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.main-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.header-actions button {
+    padding: 10px 20px;
+    border: 1px solid var(--container-border-color);
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.header-actions button:hover{
+    background-color: #008080;
+    color:white;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+/* Progress Tracker Styles */
+.progress-bar-container {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 15px;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-text, .progress-percent {
+    font-size: 14px;
+    color: #333;
+}
+
+.card {
+    background-color: #fdfdfd;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--container-border-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card .icon {
+    color: var(--primary-color);
+}
+
+.stat-value {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    color: #777;
+}
+
+.topics-list {
+    list-style: none;
+}
+
+.topics-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--container-border-color);
+    cursor: pointer;
+    font-weight: 500;
+}
+.topics-list li:hover{
+    background-color: #006666;
+    color:white;
+    border-radius: 10px;
+    padding:10px;
+}
+.topics-list li:last-child {
+    border-bottom: none;
+}
+
+/* --- Chat Interaction Area --- */
+.chat-section {
+    margin-top: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.message.ai .code-block {
+    background-color: #282c34; /* A dark, modern editor color */
+    font-family: 'Fira Code', 'Courier New', monospace; /* Use the special code font */
+    padding: 16px;
+    border-radius: 8px;
+    margin: 1em 0; /* Add some space above and below the code block */
+    overflow-x: auto; /* Allow horizontal scrolling for long lines of code */
+    white-space: pre; /* Preserve all whitespace and line breaks */
+}
+
+/* Styles the actual <code> element inside the container */
+.message.ai .code-block code {
+    color: #abb2bf; /* A soft, off-white for better readability than pure white */
+    font-size: 0.9em; /* Slightly smaller font size for code */
+}
+
+/* Styles plain text paragraphs inside an AI message for consistent spacing */
+.message.ai p {
+    margin: 0;
+    padding: 0;
+}
+#chat-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    border: 1px solid var(--container-border-color);
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.message.user {
+    background-color: var(--user-message-bg);
+    color: var(--text-color);
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.message.ai {
+    background-color: var(--ai-message-bg);
+    color: var(--text-color);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.message.loading {
+    text-align: center;
+    color: #888;
+    align-self: flex-start;
+}
+
+#chat-form {
+    display: flex;
+    gap: 16px;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 14px 20px;
+    border-radius: 25px;
+    border: 1px solid var(--container-border-color);
+    font-size: 16px;
+    font-family: var(--font-family);
+    outline: none;
+}
+
+#chat-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.2);
+}
+
+#chat-form button {
+    padding: 0 28px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#chat-form button:hover {
+    background-color: #006666;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        transform: translateX(-100%);
+        z-index: 1000;
+        background-color: white; /* Ensure it's visible on top of content */
+    }
+    .main-content {
+        padding: 24px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
