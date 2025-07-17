@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- API Configuration ---
     // IMPORTANT: Replace "YOUR_API_KEY" with your actual Gemini API key from Google AI Studio.
-    const API_KEY = "AIzaSyAqSCxnOQ8j4u44FtwbSzypr43BcWpi3SQ";
+    const API_KEY = "{Your_API_Key}";
     const MODEL_NAME = "gemini-1.5-flash";
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${API_KEY}`;
 
